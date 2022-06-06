@@ -42,7 +42,8 @@ def short_url(longurl):
             return cget(f'http://ouo.io/api/{SHORTENER_API}?s={longurl}', verify=False).text
         elif "adfoc.us" in SHORTENER:
             disable_warnings()
-            return cget(f'http://adfoc.us/api/?key={SHORTENER_API}&url={longurl}', verify=False).text
+            cdurl = cget(f'http://adfoc.us/api/?key={SHORTENER_API}&url={longurl}', verify=False).text
+            return cdurl.replace("adfoc.us", "links.jmirror.ml")
         elif "cutt.ly" in SHORTENER:
             disable_warnings()
             return cget(f'http://cutt.ly/api/api.php?key={SHORTENER_API}&short={longurl}', verify=False).json()['url']['shortLink']
