@@ -123,10 +123,10 @@ def get_readable_message():
                 globals()['PAGE_NO'] -= 1
         for index, download in enumerate(list(download_dict.values())[COUNT:], start=1):
             msg += f"<b>Name:</b> <code>{escape(str(download.name()))}</code>"
-            if update.message.from_user.username:
-                tag = f"@{update.message.from_user.username}"
+            if message.from_user.username:
+                tag = f"@{message.from_user.username}"
             else:
-                tag = update.message.from_user.mention_html(update.message.from_user.first_name)
+                tag = message.from_user.mention_html(message.from_user.first_name)
             msg += f"<b>cc:</b> <code>{tag}</code>"
             msg += f"\n<b>Status:</b> <i>{download.status()}</i>"
             if download.status() not in [
