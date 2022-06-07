@@ -43,7 +43,7 @@ def short_url(longurl):
         elif "adfoc.us" in SHORTENER:
             disable_warnings()
             cdurl = cget(f'http://adfoc.us/api/?key={SHORTENER_API}&url={longurl}', verify=False).text
-            return cdurl.replace("adfoc.us", "links.jmirror.ml")
+            return cdurl.replace("adfoc.us", "links.jmirror.tk")
         elif "cutt.ly" in SHORTENER:
             disable_warnings()
             return cget(f'http://cutt.ly/api/api.php?key={SHORTENER_API}&short={longurl}', verify=False).json()['url']['shortLink']
