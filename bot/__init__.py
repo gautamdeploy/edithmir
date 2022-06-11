@@ -501,7 +501,7 @@ try:
 except:
     pass
 
-DRIVES_NAMES.append("Main")
+DRIVES_NAMES.append("Jarvis-Mirror")
 DRIVES_IDS.append(parent_id)
 if ospath.exists('drive_folder'):
     with open('drive_folder', 'r+') as f:
